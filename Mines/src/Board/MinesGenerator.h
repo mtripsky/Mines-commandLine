@@ -20,7 +20,14 @@ namespace board {
     
 class MinesGenerator{
 public:
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
+    MinesGenerator() {}
     
+    // ------------------------------------------------------------------------
+    // METHODS
+    // ------------------------------------------------------------------------
     auto generateMines(int mSize, int count) const {
         auto result = std::vector<helpers::Coordinate<int>>();
         

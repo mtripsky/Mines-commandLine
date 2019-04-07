@@ -43,7 +43,7 @@
 		B83582A02258EE9200A9AE70 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
 		B83582A12258EE9200A9AE70 /* MinesGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinesGenerator.h; sourceTree = "<group>"; };
 		B83582A22258EE9200A9AE70 /* BoardState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardState.h; sourceTree = "<group>"; };
-		B83582A32258EE9200A9AE70 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		B83582A32258EE9200A9AE70 /* BoardInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardInitializer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		B83582A42258EE9200A9AE70 /* BoardUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardUpdater.h; sourceTree = "<group>"; };
 		B83582A62258EE9200A9AE70 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		B83582B12258F00200A9AE70 /* MinesTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinesTests; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +132,7 @@
 				B83582A02258EE9200A9AE70 /* Field.h */,
 				B83582A12258EE9200A9AE70 /* MinesGenerator.h */,
 				B83582A22258EE9200A9AE70 /* BoardState.h */,
-				B83582A32258EE9200A9AE70 /* Board.h */,
+				B83582A32258EE9200A9AE70 /* BoardInitializer.h */,
 				B83582A42258EE9200A9AE70 /* BoardUpdater.h */,
 				B83582C422593FA900A9AE70 /* BoardPrinter.h */,
 			);

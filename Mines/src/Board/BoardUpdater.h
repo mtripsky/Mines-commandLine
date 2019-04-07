@@ -20,11 +20,16 @@ namespace board {
 template <typename State>
 class BoardUpdater{
 public:
-    
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
     BoardUpdater(State& state) :
         m_state(state)
     {}
     
+    // ------------------------------------------------------------------------
+    // METHODS
+    // ------------------------------------------------------------------------
     void update(helpers::Coordinate<int> coord) const {
         if(isCoordinateOnBoard(coord.Y, coord.X))
         {
@@ -49,6 +54,9 @@ public:
     }
     
 private:
+    // ------------------------------------------------------------------------
+    // AUXILARY METHODS
+    // ------------------------------------------------------------------------
     bool isCoordinateOnBoard(int i, int j) const 
     {
         if(i < 0 || j < 0 || i >= m_state.getBoardSize() || j>= m_state.getBoardSize())
@@ -59,9 +67,18 @@ private:
         return true;
     }
     
+    // ------------------------------------------------------------------------
+    // DATA
+    // ------------------------------------------------------------------------
     State& m_state;
 };
-   
+ 
+template <typename BoardState>
+BoardUpdater<BoardState> boardUpdater(BoardState& s)
+{
+    return BoardUpdater<BoardState>(s);
+}
+    
 }
 
 #endif /* BoardUpdater_h */

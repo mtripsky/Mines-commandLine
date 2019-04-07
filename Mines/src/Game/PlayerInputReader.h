@@ -20,12 +20,19 @@ namespace game {
 template <typename BoardState, typename AvalancheGenerator, typename Printer>
 class PlayerInputReader{
 public:
-    PlayerInputReader(BoardState& state, const AvalancheGenerator& generator, const Printer& printer) :
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
+    PlayerInputReader(BoardState& state,
+                      const AvalancheGenerator& generator,
+                      const Printer& printer) :
         m_state(state),
         m_generator(generator),
-        m_printer(printer)
-    {}
+        m_printer(printer) {}
     
+    // ------------------------------------------------------------------------
+    // METHODS
+    // ------------------------------------------------------------------------
     bool readInput(const char command, const char xCoordIn, const int yCoord) const {
         const auto xCoord = findIndexInAlphabet(xCoordIn);
         
@@ -45,7 +52,10 @@ public:
     }
     
 private:
-    bool handlePress(const int x, const int y) const {
+    // ------------------------------------------------------------------------
+    // AUXILARY METHODS
+    // ------------------------------------------------------------------------
+    const bool handlePress(const int x, const int y) const {
         if(m_state.getField(x,y).isMine){
             std::cout << "<<<<<<<< GAME OVER >>>>>>>>>" << std::endl;
             m_printer.print(false);  // print current state
@@ -58,9 +68,9 @@ private:
         return true;
     }
     
-    auto findIndexInAlphabet(const char target) const
+    const size_t findIndexInAlphabet(const char target) const
     {
-        auto idx = m_alphabet.find(target);
+        const size_t idx = m_alphabet.find(target);
         
         if (idx != std::string::npos) {
             return idx;
@@ -69,7 +79,9 @@ private:
         }
     }
     
-    
+    // ------------------------------------------------------------------------
+    // DATA
+    // ------------------------------------------------------------------------
     BoardState& m_state;
     const AvalancheGenerator& m_generator;
     const Printer& m_printer;
@@ -78,13 +90,14 @@ private:
 
 
 template <typename BoardState, typename AvalancheGenerator, typename Printer>
-PlayerInputReader<BoardState, AvalancheGenerator, Printer> playerInputReader(
+PlayerInputReader<BoardState, AvalancheGenerator, Printer>
+    playerInputReader(
         BoardState& b,
         const AvalancheGenerator& a,
         const Printer& p)
-    {
-        return PlayerInputReader<BoardState, AvalancheGenerator, Printer>(b, a, p);
-    }
+{
+    return PlayerInputReader<BoardState, AvalancheGenerator, Printer>(b, a, p);
+}
     
 }
 

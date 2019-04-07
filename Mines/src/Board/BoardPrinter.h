@@ -18,9 +18,15 @@ namespace board{
 template <typename BoardState>
 class BoardPrinter{
 public:
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
     BoardPrinter(BoardState& state) : m_state(state)
     {}
     
+    // ------------------------------------------------------------------------
+    // METHODS
+    // ------------------------------------------------------------------------
     void print(bool flag = true) const
     {
         printHeader();
@@ -32,6 +38,9 @@ public:
     }
     
 private:
+    // ------------------------------------------------------------------------
+    // AUXILARY METHODS
+    // ------------------------------------------------------------------------
     void printHeader() const
     {
         std::cout << std::setw(4);
@@ -71,12 +80,19 @@ private:
         std::cout<< '\n';
     }
     
+    // ------------------------------------------------------------------------
+    // DATA
+    // ------------------------------------------------------------------------
     const std::string m_alphabet = "abcdefghijklmnopqrstuvwxyz";
     BoardState& m_state;
 };
-    
+
+template <typename BoardState>
+BoardPrinter<BoardState> boardPrinter(BoardState& s)
+{
+    return BoardPrinter<BoardState>(s);
 }
 
-
+}
 
 #endif /* BoardSolutionPrinter_h */

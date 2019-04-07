@@ -17,6 +17,9 @@ namespace board {
 
 class BoardState{
 public:
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
     BoardState(int boardSize)
     {
         m_fields = std::vector<std::vector<Field>>();
@@ -24,22 +27,22 @@ public:
         m_minesCounter = 0;
     }
     
-    // ------------------------------------------------------------
+    // ------------------------------------------------------------------------
     // ACCESSORS
-    // ------------------------------------------------------------
-    const Field getField(helpers::Coordinate<int> coordinate) const {
+    // ------------------------------------------------------------------------
+    const Field getField(const helpers::Coordinate<int> coordinate) const {
         return m_fields[coordinate.X][coordinate.Y];
     }
     
-    const Field getField(int x, int y) const {
+    const Field getField(const int x, const int y) const {
         return m_fields[x][y];
     }
     
-    const std::vector<Field> getFieldsLine(int index) const {
+    const std::vector<Field> getFieldsLine(const int index) const {
         return m_fields[index];
     }
     
-    const size_t getBoardSize() const {
+    const int getBoardSize() const {
         return m_fields.size();
     }
     
@@ -50,11 +53,11 @@ public:
     // ------------------------------------------------------------
     // MUTATORS
     // ------------------------------------------------------------
-    Field& setField(helpers::Coordinate<int> coordinate) {
+    Field& setField(const helpers::Coordinate<int> coordinate) {
         return m_fields[coordinate.X][coordinate.Y];
     }
     
-    Field& setField(int x, int y) {
+    Field& setField(const int x, const int y) {
         return m_fields[x][y];
     }
     
@@ -63,6 +66,9 @@ public:
     }
     
 private:
+    // ------------------------------------------------------------------------
+    // DATA
+    // ------------------------------------------------------------------------
     std::vector<std::vector<Field>> m_fields;
     int m_minesCounter;
 };

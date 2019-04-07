@@ -13,6 +13,9 @@ namespace helpers {
 
 template <typename T>
 struct Coordinate {
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
     Coordinate(T x, T y) : X(x), Y(y)
     {}
     

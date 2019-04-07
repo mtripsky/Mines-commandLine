@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "Board.h"
+#include "BoardInitializer.h"
 #include "BoardState.h"
 #include "BoardUpdater.h"
 #include "MinesGenerator.h"
@@ -17,21 +17,20 @@
 
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    //std::cout << "Hello, World!\n";
+    
     const auto boardSize = 3;
     const auto mines = 2;
     
     auto minesGenerator = board::MinesGenerator();
     auto state = board::BoardState(boardSize);
-    auto updater = board::BoardUpdater<board::BoardState>(state);
-    auto board = board::board(state, minesGenerator, updater);
+    auto updater = board::boardUpdater(state);
+    auto board = board::boardInitializer(state, minesGenerator, updater);
     
-    board.InitializeBoard(mines);
+    board.initialize(mines);
     
-    auto printer = board::BoardPrinter<board::BoardState>(state);
+    auto printer = board::boardPrinter(state);
     
-    auto avalancheGen = game::AvalancheGenerator<board::BoardState>(state);
+    auto avalancheGen = game::avalancheGenerator(state);
     auto reader = game::playerInputReader(state, avalancheGen, printer);
     
     auto gameStatus = true;
