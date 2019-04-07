@@ -17,12 +17,18 @@ namespace game{
 template <typename BoardState>
 class AvalancheGenerator {
 public:
+    // ------------------------------------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------------------------------------
     AvalancheGenerator(BoardState& state) : m_state(state)
     {
         m_x = std::vector<int>{-1,0,1,0};
         m_y = std::vector<int>{0,-1,0,1};
     }
     
+    // ------------------------------------------------------------------------
+    // METHODS
+    // ------------------------------------------------------------------------
     void generate(helpers::Coordinate<int> coord) const {
         const auto mineCounter = m_state.getField(coord).neighboringMinesCounter;
         m_state.setField(coord).isRevealed = true;
@@ -48,6 +54,9 @@ public:
     }
     
 private:
+    // ------------------------------------------------------------------------
+    // AUXILARY METHODS
+    // ------------------------------------------------------------------------
     bool isCoordinateOnBoard(int i, int j) const
     {
         if(i < 0 || j < 0 || i >= m_state.getBoardSize() || j>= m_state.getBoardSize())
@@ -58,11 +67,20 @@ private:
         return true;
     }
     
+    // ------------------------------------------------------------------------
+    // DATA
+    // ------------------------------------------------------------------------
     BoardState& m_state;
     std::vector<int> m_x;
     std::vector<int> m_y;
 };
 
+template <typename BoardState>
+AvalancheGenerator<BoardState> avalancheGenerator(BoardState& s)
+{
+    return AvalancheGenerator<BoardState>(s);
+}
+    
 }
 
 
