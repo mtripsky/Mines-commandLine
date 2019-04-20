@@ -24,7 +24,7 @@ namespace board{
                     auto sut = BoardState(2);
 
                     THEN( "then all neighbor counters should be zero" ) {
-                        REQUIRE( sut.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 1 );
+                        REQUIRE( sut.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 0 );
                         REQUIRE( sut.getCell(helpers::Coordinate<int>(0,1)).neighboringMinesCounter == 0 );
                         REQUIRE( sut.getCell(helpers::Coordinate<int>(1,0)).neighboringMinesCounter == 0 );
                         REQUIRE( sut.getCell(helpers::Coordinate<int>(1,1)).neighboringMinesCounter == 0 );
