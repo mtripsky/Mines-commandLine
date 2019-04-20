@@ -1,21 +1,21 @@
 //
-//  Field.h
+//  Cell.h
 //  Mines
 //
 //  Created by Matej Tripsky on 04/04/2019.
 //  Copyright © 2019 Matej Tripsky. All rights reserved.
 //
 
-#ifndef Field_h
-#define Field_h
+#ifndef Cell_h
+#define Cell_h
 
 namespace board{
 
-struct Field{
+struct Cell{
     // ------------------------------------------------------------------------
     // CONSTRUCTORS
     // ------------------------------------------------------------------------
-    Field()
+    Cell()
     {
         isRevealed = false;
         neighboringMinesCounter = 0;
@@ -35,4 +35,4 @@ struct Field{
 }
 
 
-#endif /* Field_h */
+#endif /* Cell_h */

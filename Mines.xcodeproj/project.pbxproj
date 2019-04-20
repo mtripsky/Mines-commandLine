@@ -12,8 +12,7 @@
 		B83582BF2258F5DE00A9AE70 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B83582BE2258F5DE00A9AE70 /* main.cpp */; };
 		B83582C12258F8AF00A9AE70 /* BoardUpdaterTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B83582C02258F8AF00A9AE70 /* BoardUpdaterTests.cpp */; };
 		B83582C322590DF700A9AE70 /* MinesGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B83582C222590DF700A9AE70 /* MinesGeneratorTests.cpp */; };
-		B83582C92259555100A9AE70 /* AvalancheGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B83582C82259555100A9AE70 /* AvalancheGenerator.cpp */; };
-		B83582D3225A055B00A9AE70 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B83582D2225A055B00A9AE70 /* Tests.m */; };
+		B8A45FF5226B0997002A29A1 /* AvalancheGeneratorTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8A45FF4226B0997002A29A1 /* AvalancheGeneratorTests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +39,7 @@
 /* Begin PBXFileReference section */
 		B835828822569D4C00A9AE70 /* Mines */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Mines; sourceTree = BUILT_PRODUCTS_DIR; };
 		B835828B22569D4C00A9AE70 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		B83582A02258EE9200A9AE70 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		B83582A02258EE9200A9AE70 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		B83582A12258EE9200A9AE70 /* MinesGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinesGenerator.h; sourceTree = "<group>"; };
 		B83582A22258EE9200A9AE70 /* BoardState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardState.h; sourceTree = "<group>"; };
 		B83582A32258EE9200A9AE70 /* BoardInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardInitializer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -48,18 +47,16 @@
 		B83582A62258EE9200A9AE70 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		B83582B12258F00200A9AE70 /* MinesTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinesTests; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83582BA2258F11000A9AE70 /* BoardStateTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BoardStateTests.cpp; sourceTree = "<group>"; };
-		B83582BC2258F23200A9AE70 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = catch.hpp; path = "../../../../../Downloads/Catch2-master/single_include/catch2/catch.hpp"; sourceTree = "<group>"; };
-		B83582BD2258F26100A9AE70 /* fakeit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = fakeit.hpp; path = "../../../../../Downloads/FakeIt-master/single_header/catch/fakeit.hpp"; sourceTree = "<group>"; };
 		B83582BE2258F5DE00A9AE70 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B83582C02258F8AF00A9AE70 /* BoardUpdaterTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BoardUpdaterTests.cpp; sourceTree = "<group>"; };
 		B83582C222590DF700A9AE70 /* MinesGeneratorTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MinesGeneratorTests.cpp; sourceTree = "<group>"; };
 		B83582C422593FA900A9AE70 /* BoardPrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardPrinter.h; sourceTree = "<group>"; };
 		B83582C622594DCF00A9AE70 /* AvalancheGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvalancheGenerator.h; sourceTree = "<group>"; };
-		B83582C82259555100A9AE70 /* AvalancheGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AvalancheGenerator.cpp; sourceTree = "<group>"; };
 		B83582CA2259EEFD00A9AE70 /* PlayerInputReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerInputReader.h; sourceTree = "<group>"; };
 		B83582D0225A055B00A9AE70 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B83582D2225A055B00A9AE70 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		B83582D4225A055B00A9AE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A45FF4226B0997002A29A1 /* AvalancheGeneratorTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AvalancheGeneratorTests.cpp; sourceTree = "<group>"; };
+		B8AB2F68226A70B900DA4A3A /* fakeit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fakeit.hpp; sourceTree = "<group>"; };
+		B8AB2F69226A70B900DA4A3A /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				B835828A22569D4C00A9AE70 /* Mines */,
-				B83582D1225A055B00A9AE70 /* Tests */,
 				B835828922569D4C00A9AE70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,7 +125,7 @@
 		B835829F2258EE9200A9AE70 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				B83582A02258EE9200A9AE70 /* Field.h */,
+				B83582A02258EE9200A9AE70 /* Cell.h */,
 				B83582A12258EE9200A9AE70 /* MinesGenerator.h */,
 				B83582A22258EE9200A9AE70 /* BoardState.h */,
 				B83582A32258EE9200A9AE70 /* BoardInitializer.h */,
@@ -150,9 +146,8 @@
 		B83582A72258EE9F00A9AE70 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				B8AB2F67226A6FA600DA4A3A /* libs */,
 				B83582C72259553800A9AE70 /* Game */,
-				B83582BD2258F26100A9AE70 /* fakeit.hpp */,
-				B83582BC2258F23200A9AE70 /* catch.hpp */,
 				B83582A82258EE9F00A9AE70 /* Board */,
 				B83582BE2258F5DE00A9AE70 /* main.cpp */,
 			);
@@ -181,18 +176,18 @@
 		B83582C72259553800A9AE70 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				B83582C82259555100A9AE70 /* AvalancheGenerator.cpp */,
+				B8A45FF4226B0997002A29A1 /* AvalancheGeneratorTests.cpp */,
 			);
 			path = Game;
 			sourceTree = "<group>";
 		};
-		B83582D1225A055B00A9AE70 /* Tests */ = {
+		B8AB2F67226A6FA600DA4A3A /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				B83582D2225A055B00A9AE70 /* Tests.m */,
-				B83582D4225A055B00A9AE70 /* Info.plist */,
+				B8AB2F69226A70B900DA4A3A /* catch.hpp */,
+				B8AB2F68226A70B900DA4A3A /* fakeit.hpp */,
 			);
-			path = Tests;
+			path = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B835828C22569D4C00A9AE70 /* main.cpp in Sources */,
+				B8A45FF5226B0997002A29A1 /* AvalancheGeneratorTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +311,6 @@
 				B83582BF2258F5DE00A9AE70 /* main.cpp in Sources */,
 				B83582C322590DF700A9AE70 /* MinesGeneratorTests.cpp in Sources */,
 				B83582BB2258F11000A9AE70 /* BoardStateTests.cpp in Sources */,
-				B83582C92259555100A9AE70 /* AvalancheGenerator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83582D3225A055B00A9AE70 /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,18 +456,21 @@
 		B83582B62258F00200A9AE70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NYC8D2PNGR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B83582B72258F00200A9AE70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NYC8D2PNGR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

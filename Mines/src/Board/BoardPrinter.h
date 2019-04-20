@@ -33,7 +33,7 @@ public:
         for(auto i=0; i< m_state.getBoardSize(); ++i)
         {
             std::cout << m_alphabet[i] << std::setw(1) << '|';
-            printLine(m_state.getFieldsLine(i), flag);
+            printLine(m_state.getCellsLine(i), flag);
         }
     }
     
@@ -55,22 +55,22 @@ private:
         std::cout<< '\n';
     }
     
-    void printLine(const std::vector<Field> fields, const bool solution) const
+    void printLine(const std::vector<Cell> Cells, const bool solution) const
     {
         std::cout << std::setw(2);
-        for (auto field : fields) {
+        for (auto Cell : Cells) {
             if(solution) {
-                if(field.isMine){
+                if(Cell.isMine){
                     std::cout << 'm' << ' ';
                 }
                 else{
-                    std::cout << field.neighboringMinesCounter << ' ';
+                    std::cout << Cell.neighboringMinesCounter << ' ';
                 }
             }
             else {
-                if(field.isRevealed)
+                if(Cell.isRevealed)
                 {
-                    std::cout << field.symbol << ' ';
+                    std::cout << Cell.symbol << ' ';
                 }
                 else {
                     std::cout << 'o' << ' ';

@@ -9,7 +9,7 @@
 #ifndef AvalancheGenerator_h
 #define AvalancheGenerator_h
 
-#include "Coordinate.h"
+#include "../Helpers/Coordinate.h"
 
 
 namespace game{
@@ -30,23 +30,23 @@ public:
     // METHODS
     // ------------------------------------------------------------------------
     void generate(helpers::Coordinate<int> coord) const {
-        const auto mineCounter = m_state.getField(coord).neighboringMinesCounter;
-        m_state.setField(coord).isRevealed = true;
-        m_state.setField(coord).symbol = '0' + mineCounter;
+        const auto mineCounter = m_state.getCell(coord).neighboringMinesCounter;
+        m_state.setCell(coord).isRevealed = true;
+        m_state.setCell(coord).symbol = '0' + mineCounter;
         
         if(mineCounter == 0){
             for (auto i = 0; i< m_x.size(); ++i) {
                 if(isCoordinateOnBoard(coord.X + m_x[i], coord.Y + m_y[i])){
-                    if(!m_state.getField(coord.X + m_x[i], coord.Y + m_y[i]).isRevealed
-                       && m_state.getField(coord.X + m_x[i], coord.Y + m_y[i]).neighboringMinesCounter == 0)
+                    if(!m_state.getCell(coord.X + m_x[i], coord.Y + m_y[i]).isRevealed
+                       && m_state.getCell(coord.X + m_x[i], coord.Y + m_y[i]).neighboringMinesCounter == 0)
                     {
                         generate(helpers::Coordinate<int>(coord.X + m_x[i], coord.Y + m_y[i]));
                     }
                     else
                     {
-                        m_state.setField(coord.X + m_x[i], coord.Y + m_y[i]).isRevealed = true;
-                        m_state.setField(coord.X + m_x[i], coord.Y + m_y[i]).symbol =
-                        '0' + m_state.getField(coord.X + m_x[i], coord.Y + m_y[i]).neighboringMinesCounter;
+                        m_state.setCell(coord.X + m_x[i], coord.Y + m_y[i]).isRevealed = true;
+                        m_state.setCell(coord.X + m_x[i], coord.Y + m_y[i]).symbol =
+                        '0' + m_state.getCell(coord.X + m_x[i], coord.Y + m_y[i]).neighboringMinesCounter;
                     }
                 }
             }

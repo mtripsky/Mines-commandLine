@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mines/src/Game/AvalancheGenerator.h"
-            timestampString = "576363471.130257"
+            timestampString = "577440460.666783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "class AvalancheGenerator"
-            landmarkType = "3">
+            landmarkName = "generate(helpers::Coordinate&lt;int&gt; coord)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

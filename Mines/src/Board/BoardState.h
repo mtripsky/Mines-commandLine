@@ -9,8 +9,8 @@
 #ifndef BoardState_h
 #define BoardState_h
 
-#include "Field.h"
-#include "Coordinate.h"
+#include "Cell.h"
+#include "../Helpers/Coordinate.h"
 
 
 namespace board {
@@ -22,28 +22,28 @@ public:
     // ------------------------------------------------------------------------
     BoardState(int boardSize)
     {
-        m_fields = std::vector<std::vector<Field>>();
-        m_fields.resize(boardSize, std::vector<Field>(boardSize,Field()));
+        m_Cells = std::vector<std::vector<Cell>>();
+        m_Cells.resize(boardSize, std::vector<Cell>(boardSize,Cell()));
         m_minesCounter = 0;
     }
     
     // ------------------------------------------------------------------------
     // ACCESSORS
     // ------------------------------------------------------------------------
-    const Field getField(const helpers::Coordinate<int> coordinate) const {
-        return m_fields[coordinate.X][coordinate.Y];
+    const Cell getCell(const helpers::Coordinate<int> coordinate) const {
+        return m_Cells[coordinate.X][coordinate.Y];
     }
     
-    const Field getField(const int x, const int y) const {
-        return m_fields[x][y];
+    const Cell getCell(const int x, const int y) const {
+        return m_Cells[x][y];
     }
     
-    const std::vector<Field> getFieldsLine(const int index) const {
-        return m_fields[index];
+    const std::vector<Cell> getCellsLine(const int index) const {
+        return m_Cells[index];
     }
     
     const int getBoardSize() const {
-        return m_fields.size();
+        return m_Cells.size();
     }
     
     const int getMinesCounter() const {
@@ -53,12 +53,12 @@ public:
     // ------------------------------------------------------------
     // MUTATORS
     // ------------------------------------------------------------
-    Field& setField(const helpers::Coordinate<int> coordinate) {
-        return m_fields[coordinate.X][coordinate.Y];
+    Cell& setCell(const helpers::Coordinate<int> coordinate) {
+        return m_Cells[coordinate.X][coordinate.Y];
     }
     
-    Field& setField(const int x, const int y) {
-        return m_fields[x][y];
+    Cell& setCell(const int x, const int y) {
+        return m_Cells[x][y];
     }
     
     int& setMinesCounter() {
@@ -69,7 +69,7 @@ private:
     // ------------------------------------------------------------------------
     // DATA
     // ------------------------------------------------------------------------
-    std::vector<std::vector<Field>> m_fields;
+    std::vector<std::vector<Cell>> m_Cells;
     int m_minesCounter;
 };
     

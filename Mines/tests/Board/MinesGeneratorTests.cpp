@@ -7,9 +7,9 @@
 //
 
 #include <stdio.h>
-#include "catch.hpp"
-#include "fakeit.hpp"
-#include "MinesGenerator.h"
+#include "../libs/catch.hpp"
+#include "../libs/fakeit.hpp"
+#include "../../src/Board/MinesGenerator.h"
 
 
 namespace board{

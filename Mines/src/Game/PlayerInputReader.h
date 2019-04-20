@@ -12,7 +12,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "Coordinate.h"
+#include "../Helpers/Coordinate.h"
 
 
 namespace game {
@@ -41,8 +41,8 @@ public:
                 return handlePress(xCoord, yCoord);
             case 'm':
                 m_state.setMinesCounter() += 1;
-                m_state.setField(xCoord, yCoord).symbol = 'm';
-                m_state.setField(xCoord, yCoord).isRevealed = true;
+                m_state.setCell(xCoord, yCoord).symbol = 'm';
+                m_state.setCell(xCoord, yCoord).isRevealed = true;
                 break;
             default:
                 break;
@@ -56,7 +56,7 @@ private:
     // AUXILARY METHODS
     // ------------------------------------------------------------------------
     const bool handlePress(const int x, const int y) const {
-        if(m_state.getField(x,y).isMine){
+        if(m_state.getCell(x,y).isMine){
             std::cout << "<<<<<<<< GAME OVER >>>>>>>>>" << std::endl;
             m_printer.print(false);  // print current state
             m_printer.print();  // print solution

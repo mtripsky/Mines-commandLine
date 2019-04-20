@@ -9,7 +9,7 @@
 #ifndef Board_h
 #define Board_h
 
-#include "Field.h"
+#include "Cell.h"
 #include <vector>
 
 

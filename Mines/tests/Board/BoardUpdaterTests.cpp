@@ -7,10 +7,10 @@
 //
 
 #include <stdio.h>
-#include "catch.hpp"
-#include "fakeit.hpp"
-#include "BoardUpdater.h"
-#include "BoardState.h"
+#include "../libs/catch.hpp"
+#include "../libs/fakeit.hpp"
+#include "../../src/Board/BoardUpdater.h"
+#include "../../src/Board/BoardState.h"
 
 namespace board{
 namespace tests{
@@ -25,14 +25,14 @@ SCENARIO( "testing BoardUpdater" ) {
             sut.update(coordinate01);
             
             THEN( "then it should update isBomb on (0,1) and counter on neighbors" ) {
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(0,0)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,1)).isMine);
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(1,0)).isMine);
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(1,1)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 1);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,1)).neighboringMinesCounter == 0);
-                REQUIRE( state.getField(helpers::Coordinate<int>(1,0)).neighboringMinesCounter == 1);
-                REQUIRE( state.getField(helpers::Coordinate<int>(1,1)).neighboringMinesCounter == 1);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(0,0)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,1)).isMine);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(1,0)).isMine);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(1,1)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 1);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,1)).neighboringMinesCounter == 0);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(1,0)).neighboringMinesCounter == 1);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(1,1)).neighboringMinesCounter == 1);
             }
         }
         
@@ -43,14 +43,14 @@ SCENARIO( "testing BoardUpdater" ) {
             sut.update(coordinate11);
             
             THEN( "then it should update isBomb on (0,1) and (1,1) and counter on neighbors" ) {
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(0,0)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,1)).isMine);
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(1,0)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(1,1)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 2);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,1)).neighboringMinesCounter == 1);
-                REQUIRE( state.getField(helpers::Coordinate<int>(1,0)).neighboringMinesCounter == 2);
-                REQUIRE( state.getField(helpers::Coordinate<int>(1,1)).neighboringMinesCounter == 1);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(0,0)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,1)).isMine);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(1,0)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(1,1)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 2);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,1)).neighboringMinesCounter == 1);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(1,0)).neighboringMinesCounter == 2);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(1,1)).neighboringMinesCounter == 1);
             }
         }
     }
@@ -64,8 +64,8 @@ SCENARIO( "testing BoardUpdater" ) {
             sut.update(coordinate01);
             
             THEN( "then it should not update anything" ) {
-                REQUIRE_FALSE( state.getField(helpers::Coordinate<int>(0,0)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 0);
+                REQUIRE_FALSE( state.getCell(helpers::Coordinate<int>(0,0)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 0);
             }
         }
         
@@ -74,8 +74,8 @@ SCENARIO( "testing BoardUpdater" ) {
             sut.update(coordinate00);
             
             THEN( "then it should update isBomb on (0,0)" ) {
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,0)).isMine);
-                REQUIRE( state.getField(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 0);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,0)).isMine);
+                REQUIRE( state.getCell(helpers::Coordinate<int>(0,0)).neighboringMinesCounter == 0);
             }
         }
     }

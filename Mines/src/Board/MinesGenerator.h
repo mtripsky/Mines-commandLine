@@ -28,7 +28,7 @@ public:
     // ------------------------------------------------------------------------
     // METHODS
     // ------------------------------------------------------------------------
-    auto generateMines(int mSize, int count) const {
+    std::vector<helpers::Coordinate<int>> generateMines(int mSize, int count) const {
         auto result = std::vector<helpers::Coordinate<int>>();
         
         for(auto i=0; i< mSize; ++i){

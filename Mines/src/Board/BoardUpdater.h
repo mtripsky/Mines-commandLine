@@ -10,7 +10,7 @@
 #define BoardUpdater_h
 
 #include "../Helpers/Coordinate.h"
-#include "Field.h"
+#include "Cell.h"
 #include <vector>
 #include <tuple>
 
@@ -38,13 +38,13 @@ public:
                     if(isCoordinateOnBoard(coord.X + i, coord.Y + j))
                     {
                         if(i == 0 && j == 0) {
-                            m_state.setField(
+                            m_state.setCell(
                                 helpers::Coordinate<int>(coord.X + i, coord.Y + j)).isMine = true;
-                            m_state.setField(
+                            m_state.setCell(
                                 helpers::Coordinate<int>(coord.X + i, coord.Y + j)).symbol = 'm';
                         }
                         else {
-                            m_state.setField(
+                            m_state.setCell(
                                 helpers::Coordinate<int>(coord.X + i, coord.Y + j)).neighboringMinesCounter += 1;
                         }
                     }
