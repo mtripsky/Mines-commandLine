@@ -7,4 +7,8 @@
 //
 
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
+#include "libs/catch.hpp"
+#include "Board/BoardStateTests.cpp"
+#include "Board/MinesGeneratorTests.cpp"
+#include "Board/BoardUpdaterTests.cpp"
+#include "Game/AvalancheGeneratorTests.cpp"
