@@ -17,13 +17,13 @@ jobs:
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
           name: Creating Build Files
-          command: 'Mines/cmake -H. -Bbuild'
+          command: 'cd Mines && cmake -H. -Bbuild'
       - run:
           name: Creating Binary Files
-          command: 'Mines/cmake --build build'
+          command: 'cd Mines && cmake --build build'
       - run:
           name: Unit Testing
-          command: 'Mines/bin/main'
+          command: 'cd Mines && ./bin/main'
       - run :
           name: Print the Current Time
           command: date
